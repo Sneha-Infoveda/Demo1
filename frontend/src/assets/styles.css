@@ -1,0 +1,581 @@
+/* Reset Styles now inser google fonts  */ 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap');
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Make sure body takes full height */
+body, html {
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    flex-wrap: wrap;
+    padding: 0;
+    /* background-color: #f4f4f4; */
+    border-radius: 30px;
+    overflow: hidden;
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+    
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.76);
+    border-radius: 30px; /* Adjust the corner radius */
+    z-index: -1; /* Ensure it stays behind the content */
+  }
+
+/* Heading Positioned in Corner */
+.corner-heading {
+    position: absolute;
+    top: 20pt; /* Distance from top */
+    left: 20px; /* Distance from left (for left corner) */
+    right: 20px;
+    /* right: 20px;  Use this instead if you want it in the right corner */
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.corner-heading h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #555;
+    font-weight: 800;
+    padding-right: 30px;
+    pointer-events: none;
+}
+
+.corner-dropdown {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+}
+
+.slide{
+    height: 100%;
+    width: 180px;
+    position: relative;
+    background-color: #4b5563;
+    transition:0.5s ease; 
+}
+
+.corner-dropdown i {
+    font-size: 20px;
+    color: #555;
+}
+
+.corner-dropdown i:hover {
+    color: #6366f1;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left:0 ;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    min-width: 150px;
+   
+}
+
+.dropdown-content ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    row-gap: 100px;
+}
+
+.dropdown-content ul li {
+    list-style: none;
+    padding: 10px 15px;
+    color: #4b5563;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+.dropdown-content ul li a {
+    color: #4b5563;
+    font-weight: 500;
+    padding: 5px 0;
+    display: flex;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: o.5 s ease-out;
+    align-items: center;
+    gap: 20px;
+}
+
+ul li a i {
+    width: 40px;
+    text-align: center;
+}
+
+.dropdown-content ul li:hover {
+    background-color: #f3f4f6;
+}
+
+.corner-dropdown.active .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+/* Ensure questions align below */
+/* Ensure questions are placed directly below the search bar */
+.questions {
+    position: fixed;
+    bottom: 10px; /* Directly below the search bar */
+    left: 50%; /* Center align */
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Evenly space buttons */
+    gap: 10px;
+}
+
+/* Button Styling */
+.question-btn {
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: #f0f0f0;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 48%; /* Ensures two questions per row */
+    text-align: center;
+}
+
+/* Hover and active effects */
+.question-btn:hover {
+    background-color: #555;
+    color: white;
+}
+
+.question-btn:active {
+    transform: scale(0.95);
+}
+
+/* Fixed Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+
+/* Align corner-heading to the corner */
+.corner-heading {
+    position: absolute;
+    top: 20px; /* Adjusts distance from the top */
+    left: 20px; /* Adjusts distance from the left */
+    display: flex;
+    align-items: center; /* Centers items vertically */
+    gap: 10px; /* Adds spacing between the heading and dropdown */
+}
+
+.corner-heading h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #555;
+    font-weight: 800;
+    pointer-events: none;
+}
+
+/* Corner dropdown styles */
+.corner-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center; /* Aligns icon vertically with the heading */
+    cursor: pointer;
+}
+
+.corner-dropdown i {
+    font-size: 20px;
+    color: #555;
+}
+
+.corner-dropdown i:hover {
+    color: #4b5563;
+}
+
+
+
+.welcome-message h2 {
+    font-size: 1em;
+    margin: 0;
+    word-break: break-word;
+    white-space: normal;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .welcome-message {
+        width: 90%;
+    }
+    .welcome-message h2 {
+        font-size: 1.5em;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-message h2 {
+        font-size: 1.2em;
+    }
+}
+
+
+
+
+/* User message styling */
+.user-message {
+    background-color: #dcf8c6; /* Light green for user messages */
+    color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+    align-self: flex-end;
+    text-align: right;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+.p{
+    position: absolute;  /* Position it freely */
+    top: 10px;          /* Distance from the top */
+    left: 10px;         /* Distance from the left */
+    margin: 0;         /* Remove default margin */
+    padding: 5px 10px; /* Add some padding */
+    font-size: 16px;   /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+}
+/* Chat Container */
+#chat-container-2 {
+    position: absolute;
+    left: 60%;
+    width: 70%;
+    transform: translateX(-50%);
+    max-width: 50000px;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    display: flex
+;
+    flex-direction: column;
+    gap: 10px;
+    height: calc(100vh - 140px);
+    bottom: 80px;
+    overflow-y: auto;
+}
+
+
+
+/* Chat Messages */
+.message {
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 75%;
+}
+
+/* User Message */
+.user-message {
+    background-color: #daf8cb;
+    align-self: flex-end;
+}
+
+
+/* Input and Send Button */
+.chat-input-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#chat-input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+#send-btn {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#send-btn:hover {
+    background-color: #0056b3;
+}
+
+#chat-container-2:empty {
+    display: none;
+}
+
+#platform-name {
+    position: fixed;
+    top: 20px;  /* Distance from top */
+    left: 10px; /* Change to 'right: 10px;' for top-right */
+    right: 50000px;
+  
+    color: black;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+  
+    z-index: 1000; /* Ensure it's above other elements */
+    width: 50px;
+}
+
+#platform-name {
+    margin-left: 20px;  /* Moves it right */
+    margin-top: 10px;   /* Moves it down */
+}
+
+header {
+    position: relative;
+}
+
+#platform-name {
+    position: absolute;
+    top: 10px;   /* Moves down */
+    left: 10px;  /* Moves right */
+}
+
+  
+  /* Style for the platform name */
+  #platform-name {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+    color: #333;
+    top: 20px;
+    left: -10px;
+  
+  }
+  
+ 
+
+/* ChatVeda.AI heading */
+#platform-name {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 50px;
+  
+}
+
+
+
+/* Question list */
+.conversation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    left: 1px;
+}
+
+.conversation-list li {
+    font-size: 16px;
+    padding: 5px 10px;
+    background: #f8f9fa; /* Light gray background */
+    border-radius: 5px;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+.main-content {
+    /* margin-left: 250px;  */
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+
+
+
+.welcome-message {
+    text-align: center;
+    margin-top: 205px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #444;
+    /* background-color: #f8f9fa; */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+/* Navbar Container */
+.navbar {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    gap: 15px;
+    height: 90px;
+}
+
+
+.logo {
+    max-height: 100px;
+    margin-right: 90px;
+    width: 90px;
+    height: 70px;
+    display: block;
+    margin: 0;
+    padding: 0;
+  
+}
+
+/* Navigation Menu */
+/* Default Navbar Menu (For Desktop) */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 200px;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    margin-top: -45px;
+    margin-left: 400px;
+}
+
+/* Responsive Adjustment (For Mobile and Tablets) */
+@media (max-width: 1024px) {
+    .nav-menu {
+        gap: 80px;
+        margin-left: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 15px;
+        margin-left: 60px;
+        flex-direction: column;
+        margin-top: -40px;
+    }
+}
+
+
+.nav-item {
+    position: relative;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+.nav-button:hover {
+    color: #0056b3;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    z-index: 999;
+}
+
+.dropdown button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    padding: 5px 10px;
+    color: #555;
+}
+
+.dropdown button:hover {
+    background-color: #f4f4f4;
+    border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .nav-menu {
+        flex-direction: row;
+        gap: 10px;
+    }
+}
+

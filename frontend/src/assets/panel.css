@@ -1,0 +1,471 @@
+/* Main container for heading, logo, and questions */
+.corner-logo {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align everything to the left */
+    background: rgba(255, 255, 255, 0.8); /* Light background with transparency */
+    padding: 15px; /* Space inside the box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Adds soft shadow */
+    position: absolute; /* Moves the box to a corner */
+    top: -1px;  /* Distance from the top */
+    left: 1px; /* Distance from the left */
+   /* width: 300px; /* Adjust width as needed */
+    box-sizing: border-box;
+    width: 250px;
+ 
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #e0e0e0;
+    
+    
+}
+
+/* ChatVeda.AI heading */
+
+.platform-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 100px;
+}
+
+
+
+
+
+
+
+/* Question list */
+.conversation-list {
+    position: relative;
+    list-style: none;
+    /* padding: 0; */
+    margin: 0;
+    width: 109%;
+    left: 10px;
+    margin-top: -1px;
+    margin-left: 10px;
+    max-height: 80vh; /* Limit height to avoid overflowing */
+    overflow-y: auto; /* Enable vertical scrolling */
+    scrollbar-width: none; /* For modern browsers */
+    scrollbar-color: #888 #f1f1f1; /* Custom scrollbar colors */
+    padding: 10px;
+    position: fixed;
+
+}
+
+.conversation-list li:hover {
+    background: #e0e0e0;
+}
+
+/* Custom Scrollbar for Webkit Browsers */
+.conversation-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.conversation-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.conversation-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.conversation-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Ensure it stays in place */
+/* Initially hide the whole side panel */
+/* Side Panel (Entire Panel) */
+/* .side-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: #fff;
+    transition: width 0.3s;
+    overflow-x: hidden;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.side-panel.open {
+    width: 250px;
+}
+
+.side-panel.closed {
+    width: 0px;
+} */
+
+/* Sidebar Styles */
+
+.toggle-icon {
+    position: absolute;
+    top: 15px;
+    right: -20px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    z-index: 101;  /* Ensure it appears above everything */
+}
+
+.toggle-icon:hover {
+    transform: scale(1.1);
+}
+
+/* .logo-container {
+    padding: 15px;
+    text-align: center;
+} */
+
+/* .conversation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+} */
+
+.conversation-list li {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.conversation-list li:hover {
+    background: #f0f0f0;
+}
+
+.chatveda-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 
+.logo-container {
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    padding: 20px 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} */
+
+/* .logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+/* Navbar.css */
+/* .logo {
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+   
+} */
+
+/* .logo img {
+    width: 10px;
+    height: 50px;
+    transition: all 0.3s ease;
+    left: 50px;
+} */
+
+ /* Logo Styling */
+.logo {
+    width: 70px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 9px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adjustments for Mobile View */
+@media (max-width: 768px) {
+    .logo {
+        margin-left: -5px; /* Moves the logo slightly to the left */
+        margin-right: 10px;
+    }
+}
+
+
+
+.sidebar-open .logo img {
+    width: 400px;
+}
+
+
+
+/* styles.css */
+.app-container {
+    display: flex;
+    transition: all 0.3s;
+}
+
+.app-container.sidebar-open .main-content {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+}
+
+.app-container.sidebar-closed .main-content {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+}
+
+.main-content {
+    padding: 20px;
+    transition: all 0.3s;
+}
+
+/* Hamburger Button */
+
+
+ .icons {
+    display:  flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+ }
+ .corner-logo img {
+    width: 200px;
+    height: 170px;
+    box-sizing: border-box;
+}
+ .hambruger-wrapper{
+    display:  flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    border: none;
+
+ }
+
+ /* Panel.css */
+.app-container {
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+
+/* panel.css */
+
+/* Adjust the sidebar size and position */
+.side-panel {
+    position: fixed;
+    top: 80px;  /* Decreased to avoid hiding the logo */
+    left: 1px;
+    height: calc(100% - 60px);  /* Adjust height to match the new top */
+    width: 250px;
+    background: #fff;
+   
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.side-panel.closed {
+    transform: translateX(-220px);
+}
+
+.side-panel.open {
+    transform: translateX(0);
+}
+
+/* Position toggle button at the top */
+.toggle-button {
+    position: absolute;
+    top: 10px;  /* Moves the button to the top */
+    right: -1px;
+    background: #fff;
+    /* border: 1px solid #ccc;
+    border-radius: 50%; */
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+    z-index: 1001;
+}
+
+.logo-container {
+    padding: 10px;
+    text-align: center;
+    height: 50px;  /* Adjusted height for better logo visibility */
+}
+
+.conversation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.conversation-list li {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.conversation-list li:hover {
+    background: #f5f5f5;
+}
+
+
+/* Main Container */
+.app-container {
+    display: flex;
+    transition: all 0.3s ease;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    z-index: 100;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar-open .sidebar {
+    left: 0;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+ 
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-y: auto;
+}
+
+/* Search Bar Adjustment */
+/* .search-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    transition: width 0.1s ease, left 0s ease;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 5px 10px;
+    background: #fff;
+    z-index: 10;
+   
+} */
+
+.search-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 53%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 900px;
+    z-index: 5;
+    transition: width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .search-bar {
+        width: calc(100% - 60px);
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-bar {
+        width: calc(100% - 30px);
+        max-width: 100%;
+    }
+}
+
+
+
+
+.search-bar input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 5px;
+    font-size: 1em;
+    border-radius: 30px;
+}
+
+.search-bar button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* transition: background 0.3s ease; */
+}
+
+.search-bar button:hover {
+    background: #0056b3;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .sidebar-open .search-bar {
+        left: calc(50% + 100px);
+        width: calc(100% - 240px);
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 180px;
+    }
+
+    .sidebar-open .search-bar {
+        left: calc(50% + 90px);
+        width: calc(100% - 220px);
+    }
+}

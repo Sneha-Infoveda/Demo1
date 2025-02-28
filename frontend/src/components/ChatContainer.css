@@ -1,0 +1,107 @@
+/* Chat container */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 70vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0px;
+    max-width: 830px;
+    top: 80px;
+}
+
+/* Chat message structure */
+.chat-message {
+    display: flex;
+    flex-direction: column;
+    max-width: 75%;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 12px;
+    word-wrap: break-word;
+    animation: fadeIn 0.3s ease-in-out;
+    max-width: fit-content;
+    white-space: nowrap;
+}
+
+/* Name (Seeker & ChatVeda) */
+.message-sender {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* User messages (Right aligned, Blue) */
+.chat-message.user {
+    align-self: flex-end;
+    background-color: #e9ecef;
+    color: black;
+    text-align: left;
+}
+
+/* Bot messages (Left aligned, Gray) */
+.chat-message.bot {
+    align-self: flex-start;
+    /* background-color: #e9ecef; */
+    color: black;
+    text-align: left;
+}
+
+/* Message Bubble */
+.message-bubble {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+/* Justify AI response text inside message bubbles */
+.chat-message.bot .message-bubble {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Follow-up question buttons */
+.followup-questions {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    gap: 1px;
+}
+
+.followup-questions button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.followup-questions button:hover {
+    background-color: #495057;
+}
+
+/* Responsive - Center Messages on Mobile Screens */
+@media screen and (max-width: 768px) {
+    .chat-message.user,
+    .chat-message.bot {
+        align-self: center;
+        /* max-width: 100%; */
+    }
+
+    .chat-message .message-bubble {
+        text-align: center;
+
+    }
+
+.chat-container {
+    left: 20px;
+}
+}
