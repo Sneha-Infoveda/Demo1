@@ -1,7 +1,7 @@
 {
   
     "engines": {
-      "node": "22.x"
+      "node": "16.x"
     },
   "name": "sample-react-app",
   "version": "0.1.0",
