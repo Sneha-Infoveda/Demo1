@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import './SearchBar.css'; 
+import './SearchBar.css';
 
 const SearchBar = ({ query, setQuery, setChatHistory }) => {
     const [loading, setLoading] = useState(false);
+    const [language, setLanguage] = useState("en"); // State for selected language
 
     const handleSearch = async () => {
         if (!query.trim()) return;
@@ -18,7 +19,7 @@ const SearchBar = ({ query, setQuery, setChatHistory }) => {
             const res = await fetch("https://chatveda.onrender.com/get_answer", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ question: query })
+                body: JSON.stringify({ question: query, language: language }) // Send language to backend
             });
 
             const data = await res.json();
@@ -56,6 +57,14 @@ const SearchBar = ({ query, setQuery, setChatHistory }) => {
             <button onClick={handleSearch} disabled={loading}>
                 {loading ? "Thinking..." : <i className="fas fa-paper-plane"></i>}
             </button>
+
+            {/* Language Selection Dropdown */}
+            <select id="language-select" value={language} onChange={(e) => setLanguage(e.target.value)}>
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="mr">Marathi</option>
+                {/* Add more languages as needed */}
+            </select>
         </div>
     );
 };
