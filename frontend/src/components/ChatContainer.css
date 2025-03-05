@@ -7,14 +7,31 @@
     max-width: 830px;
     margin: 0 auto; /* Center the chat container */
     padding: 0;
-    height: 70vh;
-    overflow-y: auto;
-    scrollbar-width: none;
-    background-color: transparent;
+    height: 80vh;
+    /* background-color: transparent; */
     box-shadow: none;
-    border-radius: 0px;
+    position: relative;
     top: 80px;
+    overflow-y: auto;
 }
+.chat-container {
+    max-height: 800px; /* Set a proper height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+  
+    scroll-behavior: smooth; /* Smooth scrolling */
+  
+  
+}
+
+.chat-messages-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; 
+    
+    scrollbar-width: none; /* Hide scrollbar for a cleaner look */
+    padding: 10px; /* Ensure spacing inside */
+}
+
 
 /* Chat message structure */
 .chat-message {
@@ -32,55 +49,119 @@
 }
 
 /* User messages (Blue bubble) */
-.chat-message.user {
-    background-color: #e9ecef;
-    color: black;
-    text-align: center;
+/* User messages (Light Blue Bubble) */
+/* Container holding the messages */
+/* .chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; /* Ensure it takes full width */
+    /* padding: 0px 10px; 
+}  */
+.chat-container {
+    width: 100%; /* Make it use the full width */
+    max-width: none; /* Remove any max width limits */
+    margin: 0; /* Remove any margins */
+    padding: 10px; /* Adjust padding if needed */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
-/* Bot messages (Gray bubble) */
+/* Bot Messages (Fix width issue) */
 .chat-message.bot {
-    background-color: #f1f3f5;
-    color: black;
-    text-align: center;
+    text-align: left;
+    align-self: flex-start;
+    max-width: 100%;  /* Use full width */
+    word-wrap: break-word;
+    white-space: normal;
+    padding: 10px 0;  /* Remove left and right padding */
+    margin: 5px 0;  /* Remove left and right margin */
+    border-radius: 0;  /* Remove rounded edges */
+    background-color: #ffffff; /* Set background to white */
 }
+.chat-container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    left: 14px;
+}
+
+.message-sender {
+    display: flex;
+    align-self: flex-start;
+    flex-direction: row;
+}
+
+/* User Messages (Fix width issue) */
+.chat-message.user {
+    text-align: left;
+    justify-content: flex-start;
+    align-self: flex-start;
+    background-color: #e1f5fe;
+    padding: 8px 12px;
+    border-radius: 8px;
+    max-width: 100%; /* Allow message to take full width */
+    margin: 5px 0; /* Remove large spacing */
+}
+
+/* Buttons inside bot messages */
+.chat-message.bot button {
+    width: 100%; /* Make buttons take full width */
+    display: block; /* Ensure proper spacing */
+    margin: 5px 0; /* Reduce extra space between buttons */
+}
+
 
 /* Message Bubble */
 .message-bubble {
     padding: 10px;
     border-radius: 10px;
     max-width: 100%;
-    margin-top: 30px;
+    margin-top: -18px;
+   
    
 }
 
 /* Justify AI response text inside message bubbles */
 .chat-message.bot .message-bubble {
-    text-align: justify;
+    /* text-align: justify; */
     text-justify: inherit;
+    
 }
 
-/* Follow-up question buttons */
 .followup-questions {
-    margin-top: 10px;
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Center buttons */
-    gap: 5px;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-start; /* Align buttons to the left */
+    margin-bottom: 10px;
 }
 
 .followup-questions button {
-    background-color: #6c757d;
-    color: white;
+    width: 100%; /* Make button full width */
+    text-align: left; /* Align text to the left */
+    background-color: white;
     border: none;
     padding: 8px 12px;
+    margin: 4px 0;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
+/* 🔥 When hovering over the button, change color and add glow effect */
 .followup-questions button:hover {
-    background-color: #495057;
+   
+    color: blue; /* Change text color */
+    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.8); /* Add glowing effect */
 }
+
+/* 🔥 When clicking the button, add a deeper color */
+.followup-questions button:active {
+    color: #0056b3;
+}
+
+
 
 /* Responsive - Center Messages on Mobile Screens */
 @media screen and (max-width: 768px) {

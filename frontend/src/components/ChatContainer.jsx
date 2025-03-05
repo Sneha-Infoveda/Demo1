@@ -2,20 +2,22 @@ import React, { useEffect, useRef } from 'react';
 import './ChatContainer.css'; // Import styles
 
 const ChatContainer = ({ chatHistory, setQuery }) => {
-    const chatEndRef = useRef(null);
+    const chatContainerRef = useRef(null);
 
     // Auto-scroll to the bottom when chat updates
     useEffect(() => {
-        if (chatEndRef.current) {
-            chatEndRef.current.scrollIntoView({ behavior: "smooth" });
+        if (chatContainerRef.current) {
+            setTimeout(() => {
+                chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+            }, 100); // Small delay ensures DOM is updated
         }
     }, [chatHistory]);
 
     // Hide chat container if no messages
-    if (chatHistory.length === 0) return null;
+    if (!chatHistory || chatHistory.length === 0) return null;
 
     return (
-        <div className="chat-container">
+        <div className="chat-container" ref={chatContainerRef}>
             {chatHistory.map((chat, index) => (
                 <div key={index} className={`chat-message ${chat.isUser ? 'user' : 'bot'}`}>
                     
@@ -39,8 +41,6 @@ const ChatContainer = ({ chatHistory, setQuery }) => {
                     )}
                 </div>
             ))}
-            {/* Empty div for auto-scroll to bottom */}
-            <div ref={chatEndRef} />
         </div>
     );
 };

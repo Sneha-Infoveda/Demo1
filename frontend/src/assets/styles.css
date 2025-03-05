@@ -1,6 +1,9 @@
 /* Reset Styles now inser google fonts  */ 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari&display=swap');
 
+body {
+    font-family: 'Noto Serif Devanagari', serif;
+}
 
 
 
@@ -8,7 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
 }
 
 /* Make sure body takes full height */
@@ -20,7 +23,8 @@ body, html {
     display: flex;
     min-height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Noto Serif Devanagari', serif;
+   
     flex-wrap: wrap;
     padding: 0;
     /* background-color: #f4f4f4; */
